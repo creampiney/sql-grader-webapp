@@ -1,0 +1,78 @@
+{
+    "q1_1": {
+        "file": "soccer.db",
+        "answer": "SELECT count(*) AS 'number of player' FROM Player"
+    },
+    "q1_2": {
+        "file": "soccer.db",
+        "answer": "SELECT League.id, country_id, Country.name as country, League.name as league FROM Country JOIN League ON Country.id = League.country_id"
+    },
+    "q1_3": {
+        "file": "soccer.db",
+        "answer": "SELECT * FROM Team ORDER BY team_long_name LIMIT 10"
+    },
+    "q1_4": {
+        "file": "soccer.db",
+        "answer": "SELECT * FROM Player WHERE Player.height > 170 AND Player.weight > 163"
+    },
+    "q1_5": {
+        "file": "soccer.db",
+        "answer": "with q as (SELECT player_api_id, player_name, weight, height, 4535.9*weight/height/height as bmi FROM Player) SELECT *, CASE WHEN bmi < 16 THEN 'Severe Thinness' WHEN bmi < 17 THEN 'Moderate Thinness' WHEN bmi < 18.5 THEN 'Mild Thinness' WHEN bmi < 25 THEN 'Normal' WHEN bmi < 30 THEN 'Overweight' WHEN bmi < 35 THEN 'Obese Class I' WHEN bmi < 40 THEN 'Obese Class II' ELSE 'Obese Class III' END AS category FROM q WHERE bmi >= 25"
+    },
+    "q1_6": {
+        "file": "soccer.db",
+        "answer": "with q as (SELECT player_api_id, player_name, weight, height, 4535.9*weight/height/height as bmi FROM Player), p as (SELECT *, CASE WHEN bmi < 16 THEN 'Severe Thinness' WHEN bmi < 17 THEN 'Moderate Thinness' WHEN bmi < 18.5 THEN 'Mild Thinness' WHEN bmi < 25 THEN 'Normal' WHEN bmi < 30 THEN 'Overweight' WHEN bmi < 35 THEN 'Obese Class I' WHEN bmi < 40 THEN 'Obese Class II' ELSE 'Obese Class III' END AS category FROM q), r as (SELECT category FROM p GROUP BY category ORDER BY CASE category WHEN 'Severe Thinness' THEN 0 WHEN 'Moderate Thinness' THEN 1 WHEN 'Mild Thinness' THEN 2 WHEN 'Normal' THEN 3 WHEN 'Overweight' THEN 4 WHEN 'Obese Class I' THEN 5 WHEN 'Obese Class II' THEN 6 ELSE 7 END) SELECT category, count(category) as number FROM p GROUP BY category ORDER BY number DESC"
+    },
+    "q1_7": {
+        "file": "soccer.db",
+        "answer": "SELECT match_api_id, league_id, date, t1.team_long_name as home_team_name, t2.team_long_name, home_team_goal || ' : ' || away_team_goal as score FROM Match JOIN Team t1 ON Match.home_team_api_id = t1.team_api_id JOIN Team t2 ON Match.away_team_api_id = t2.team_api_id"
+    },
+    "q1_8": {
+        "file": "soccer.db",
+        "answer": "SELECT team_api_id, Team.team_long_name, Team.team_short_name, count(team_api_id) as number_of_match FROM Team JOIN Match ON team.team_api_id = match.home_team_api_id OR team.team_api_id = match.away_team_api_id GROUP BY team_api_id ORDER BY team_api_id"
+    },
+    "q1_9": {
+        "file": "soccer.db",
+        "answer": "SELECT Country.name as country_name, League.name as league_name, season, count(distinct stage) as number_of_stages, count(distinct HT.team_long_name) as number_of_teams, avg(home_team_goal) AS avg_home_team_goals, avg(away_team_goal) AS avg_away_team_goals, sum(home_team_goal+away_team_goal) AS total_goals FROM Match JOIN Country ON Country.id = Match.country_id JOIN League ON League.id = Match.league_id LEFT JOIN Team AS HT ON HT.team_api_id = Match.home_team_api_id LEFT JOIN Team AS AT ON AT.team_api_id = Match.away_team_api_id GROUP BY country_name, league_name, season ORDER BY Country.name, League.name, season DESC"
+    },
+    "q2_1": {
+        "file": "mediastore.db",
+        "answer": "SELECT Name, Milliseconds, Milliseconds/1000 as Seconds FROM tracks ORDER BY Milliseconds DESC"
+    },
+    "q2_2": {
+        "file": "mediastore.db",
+        "answer": "SELECT DISTINCT company FROM customers WHERE company IS NOT NULL ORDER BY company"
+    },
+    "q2_3": {
+        "file": "mediastore.db",
+        "answer": "SELECT trackid, name FROM tracks WHERE name LIKE '%The%' ORDER BY TrackId"
+    },
+    "q2_4": {
+        "file": "mediastore.db",
+        "answer": "SELECT trackid, name FROM tracks WHERE name GLOB '*The*' ORDER BY TrackId"
+    },
+    "q2_5": {
+        "file": "mediastore.db",
+        "answer": "WITH p as (SELECT TrackId, Name, CASE WHEN milliseconds <= 60000 THEN 'Short' WHEN milliseconds > 60000 AND milliseconds <= 300000 THEN 'Medium' ELSE 'Long' END AS Category FROM tracks) SELECT TrackId, Name, Category FROM p WHERE (Category = 'Medium' OR Category = 'Long') AND Name LIKE 'D%' ORDER BY Name"
+    },
+    "q2_6": {
+        "file": "mediastore.db",
+        "answer": "SELECT Name FROM artists LEFT JOIN albums ON artists.ArtistId = albums.ArtistId WHERE Title IS NULL ORDER BY Name"
+    },
+    "q2_7": {
+        "file": "mediastore.db",
+        "answer": "SELECT trackid, tracks.name AS Track, albums.title AS Album, artists.name AS Artist FROM tracks INNER JOIN albums ON albums.albumid = tracks.albumid INNER JOIN artists ON artists.artistid = albums.artistid WHERE artists.artistid%2=0 ORDER BY TrackId"
+    },
+    "q2_8": {
+        "file": "mediastore.db",
+        "answer": "SELECT media_types.Name as MediaTypeName, COUNT(media_types.MediaTypeId) as TracksNumber, AVG(tracks.Milliseconds) as AverageMilliseconds, MAX(tracks.Milliseconds) as MostMilliseconds, MIN(tracks.Milliseconds) as LeastMilliseconds FROM media_types LEFT JOIN tracks ON tracks.MediaTypeId = media_types.MediaTypeId GROUP BY media_types.MediaTypeId"
+    },
+    "q2_9": {
+        "file": "mediastore.db",
+        "answer": "SELECT Country, COUNT(DISTINCT customers.customerid) as Customer, SUM(total) as TotalSales FROM customers JOIN invoices ON customers.customerid = invoices.CustomerId GROUP BY Country ORDER BY TotalSales DESC, Country"
+    },
+    "q2_10": {
+        "file": "mediastore.db",
+        "answer": "SELECT g.Name, COUNT(*) AS TracksSold FROM genres g INNER JOIN tracks t ON g.GenreId = t.GenreId INNER JOIN invoice_items invit ON invit.TrackId = t.TrackId INNER JOIN invoices inv ON inv.InvoiceId = invit.InvoiceId WHERE inv.BillingCountry IN ('USA', 'Canada', 'Brazil', 'France', 'Germany') GROUP BY g.GenreId ORDER BY TracksSold DESC LIMIT 10"
+    }
+}
