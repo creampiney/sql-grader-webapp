@@ -1,0 +1,2 @@
+(this["webpackJsonpgrader-app"]=this["webpackJsonpgrader-app"]||[]).push([[21],{298:function(a,p,e){"use strict";e.r(p),p.default=e.p+"static/media/q2_6.5ae542de.md"}}]);
+//# sourceMappingURL=21.a5c91de6.chunk.js.map
