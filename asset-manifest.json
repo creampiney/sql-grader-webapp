@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sql-grader-webapp/static/css/main.22bef6d7.chunk.css",
-    "main.js": "/sql-grader-webapp/static/js/main.db6c1701.chunk.js",
-    "main.js.map": "/sql-grader-webapp/static/js/main.db6c1701.chunk.js.map",
+    "main.js": "/sql-grader-webapp/static/js/main.fe57d58a.chunk.js",
+    "main.js.map": "/sql-grader-webapp/static/js/main.fe57d58a.chunk.js.map",
     "runtime-main.js": "/sql-grader-webapp/static/js/runtime-main.2d54a227.js",
     "runtime-main.js.map": "/sql-grader-webapp/static/js/runtime-main.2d54a227.js.map",
     "static/js/2.137d2534.chunk.js": "/sql-grader-webapp/static/js/2.137d2534.chunk.js",
@@ -83,6 +83,6 @@
     "static/js/runtime-main.2d54a227.js",
     "static/js/2.137d2534.chunk.js",
     "static/css/main.22bef6d7.chunk.css",
-    "static/js/main.db6c1701.chunk.js"
+    "static/js/main.fe57d58a.chunk.js"
   ]
 }
