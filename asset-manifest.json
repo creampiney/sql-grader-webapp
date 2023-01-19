@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/sql-grader-webapp/static/css/main.22bef6d7.chunk.css",
-    "main.js": "/sql-grader-webapp/static/js/main.fe57d58a.chunk.js",
-    "main.js.map": "/sql-grader-webapp/static/js/main.fe57d58a.chunk.js.map",
+    "main.js": "/sql-grader-webapp/static/js/main.71dcb9fa.chunk.js",
+    "main.js.map": "/sql-grader-webapp/static/js/main.71dcb9fa.chunk.js.map",
     "runtime-main.js": "/sql-grader-webapp/static/js/runtime-main.2d54a227.js",
     "runtime-main.js.map": "/sql-grader-webapp/static/js/runtime-main.2d54a227.js.map",
-    "static/js/2.137d2534.chunk.js": "/sql-grader-webapp/static/js/2.137d2534.chunk.js",
-    "static/js/2.137d2534.chunk.js.map": "/sql-grader-webapp/static/js/2.137d2534.chunk.js.map",
+    "static/js/2.ba003fdf.chunk.js": "/sql-grader-webapp/static/js/2.ba003fdf.chunk.js",
+    "static/js/2.ba003fdf.chunk.js.map": "/sql-grader-webapp/static/js/2.ba003fdf.chunk.js.map",
     "static/js/3.cf98120d.chunk.js": "/sql-grader-webapp/static/js/3.cf98120d.chunk.js",
     "static/js/3.cf98120d.chunk.js.map": "/sql-grader-webapp/static/js/3.cf98120d.chunk.js.map",
     "static/js/4.0bf891ce.chunk.js": "/sql-grader-webapp/static/js/4.0bf891ce.chunk.js",
@@ -55,7 +55,7 @@
     "static/js/25.6cedf95a.chunk.js.map": "/sql-grader-webapp/static/js/25.6cedf95a.chunk.js.map",
     "index.html": "/sql-grader-webapp/index.html",
     "static/css/main.22bef6d7.chunk.css.map": "/sql-grader-webapp/static/css/main.22bef6d7.chunk.css.map",
-    "static/js/2.137d2534.chunk.js.LICENSE.txt": "/sql-grader-webapp/static/js/2.137d2534.chunk.js.LICENSE.txt",
+    "static/js/2.ba003fdf.chunk.js.LICENSE.txt": "/sql-grader-webapp/static/js/2.ba003fdf.chunk.js.LICENSE.txt",
     "static/media/q1.md": "/sql-grader-webapp/static/media/q1.813fc3c4.md",
     "static/media/q1_1.md": "/sql-grader-webapp/static/media/q1_1.312364d0.md",
     "static/media/q1_2.md": "/sql-grader-webapp/static/media/q1_2.dbe51b69.md",
@@ -81,8 +81,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.2d54a227.js",
-    "static/js/2.137d2534.chunk.js",
+    "static/js/2.ba003fdf.chunk.js",
     "static/css/main.22bef6d7.chunk.css",
-    "static/js/main.fe57d58a.chunk.js"
+    "static/js/main.71dcb9fa.chunk.js"
   ]
 }
